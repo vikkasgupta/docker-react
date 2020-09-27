@@ -1,0 +1,11 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+RUN npm install
+
+#Can be removed as volumes concept is introduced
+COPY . .
+
+CMD ["npm", "run", "start"]
